@@ -1,6 +1,6 @@
 <template>
   <main class="flex flex-col items-center">
-    <Button label="Go!"/>
+    <Button label="Go!" class="mt-10" />
   </main>
 </template>
 
