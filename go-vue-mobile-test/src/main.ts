@@ -1,0 +1,36 @@
+import '@/assets/css/tailwind.css'
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+import PrimeVue from 'primevue/config'
+import Aura from '@primeuix/themes/aura'
+import { definePreset, palette } from '@primeuix/themes'
+
+import App from './App.vue'
+import router from './router'
+
+const app = createApp(App)
+
+app.use(createPinia())
+app.use(router)
+
+const colorPreset = definePreset(Aura, {
+  semantic: {
+    primary: palette('#f8931e'),
+  },
+})
+
+app.use(PrimeVue, {
+  theme: {
+    preset: colorPreset,
+    options: {
+      prefix: 'p',
+      darkModeSelector: '.dark',
+      cssLayer: {
+        name: 'primevue',
+        order: 'tailwind-base, primevue, tailwind-utilities',
+      },
+    },
+  },
+})
+
+app.mount('#app')
