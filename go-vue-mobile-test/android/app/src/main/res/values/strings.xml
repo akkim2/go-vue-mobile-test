@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">go-vue-mobile-test</string>
+    <string name="title_activity_main">go-vue-mobile-test</string>
+    <string name="package_name">com.akkim2.govuemobiletest</string>
+    <string name="custom_url_scheme">com.akkim2.govuemobiletest</string>
+</resources>

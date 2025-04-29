@@ -1,39 +1,29 @@
 # go-vue-mobile-test
 
-This template should help get you started developing with Vue 3 in Vite.
+## Setup
+`cd` into the `go-vue-mobile-test` directory and run `npm ci`
 
-## Recommended IDE Setup
+gomobile must also be installed via `go install golang.org/x/mobile/cmd/gomobile@latest` and `gomobile init`
+along with bind via `go get golang.org/x/mobile/bind` run from the `go` directory. 
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+This was all quite painful as there was virtually no documentation, this Chinese forum helped me a lot: https://blog.csdn.net/sinat_22215253/article/details/138500534
 
-## Type Support for `.vue` Imports in TS
+## Building the Go library for Android Use
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+From the `go` directory, run `gomobile bind -target=android -androidapi 35 -o ../android/libs/wisdom.aar wisdom`
 
-## Customize configuration
+## Running on Android
+Assuming Android Studio/SDK Meerkat is installed and configured and available at `$ANDROID_HOME`, with 
+Java 21 installed and available at `$JAVA_HOME`, as well as the Android NDK and CMAKE with the NDK available at `$ANDROID_NDK_ROOT`, run:
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+`capacitor build` to build the app, then
+`capacitor run android` to run the app
 
-## Project Setup
+## Running on iOS
+Not yet implemented
 
-```sh
-npm install
-```
+## Usage
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+Pressing the "Go!" button in the user interface will call the 
+Go function `goTest()` in the `main.go` file in the `go-vue-mobile-test/go` directory
+via the TS/Vue frontend and display the Go function's output. 
