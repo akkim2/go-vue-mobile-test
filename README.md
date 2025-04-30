@@ -24,6 +24,4 @@ Not yet implemented
 
 ## Usage
 
-Pressing the "Go!" button in the user interface will call the 
-Go function `goTest()` in the `main.go` file in the `go-vue-mobile-test/go` directory
-via the TS/Vue frontend and display the Go function's output. 
+Pressing the "Go!" button in the user interface will call the singular function in the Go package with provided string param and send the returned result back to the frontend. 
