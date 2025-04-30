@@ -10,7 +10,7 @@ This was all quite painful as there was virtually no documentation, this Chinese
 
 ## Building the Go library for Android Use
 
-From the `go` directory, run `gomobile bind -target=android -androidapi 35 -o ../android/libs/wisdom.aar wisdom`
+From the `go` directory, run `gomobile bind -target=android -androidapi 21 -o ../android/libs/wisdom.aar wisdom`
 
 ## Running on Android
 Assuming Android Studio/SDK Meerkat is installed and configured and available at `$ANDROID_HOME`, with 
